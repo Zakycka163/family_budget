@@ -7,10 +7,10 @@ const About = () => {
             <PageTitle name="О системе"/>
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
-                    <h4 className="display-6">
+                    <h4>
                         <div className="row">
-                            <div className="col-6 order-1">Разработчик:</div>
-                            <div className="col-6 order-1">Ставинский Д.А.</div>
+                            <div className="col-6">Разработчик:</div>
+                            <div className="col-6">Ставинский Д.А.</div>
                         </div>
                     </h4>
                     <p className="lead">

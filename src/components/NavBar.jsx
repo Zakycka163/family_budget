@@ -3,8 +3,8 @@ import {NavLink} from "react-router-dom";
 
 const NavBar = () => {
     return (
-        <nav className="navbar bg-light sticky-top d-none d-lg-flex">
-            <ul className="nav nav-pills">
+        <nav className="navbar bg-light sticky-top d-lg-flex">
+            <ul className="nav nav-pills nav-sm">
                 <li className="nav-item">
                     <NavLink className="btn btn-light" exact to="/">Главная</NavLink>
                 </li>
@@ -13,7 +13,7 @@ const NavBar = () => {
                 </li>
             </ul>
             <form className="form-inline">
-                <input className="btn btn-success" type="button" value="Войти" />
+                <NavLink className="btn btn-success" to="/login">Войти</NavLink>
             </form>
         </nav>
     )
