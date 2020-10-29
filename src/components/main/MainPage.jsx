@@ -1,10 +1,14 @@
 import React from "react";
 import PageTitle from "../PageTitle";
 
-const MainPage = () => {
+
+
+const MainPage = (props) => {
+    let lang = require("./lang.json");
+    let lg = "en"
     return (
         <div>
-            <PageTitle name="Главная страница" />
+            <PageTitle name={lang[lg].name} />
         </div>
     )
 }
