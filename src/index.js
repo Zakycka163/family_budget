@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+let lang = require("./redux/lang.json");
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App lang={lang}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,12 +1,13 @@
 import React from "react";
 import PageTitle from "../PageTitle";
 
-const MainPage = (props) => {
+const Dev = (props) => {
     return (
         <div>
             <PageTitle title={props.title} />
+            test
         </div>
     )
 }
 
-export default MainPage;
+export default Dev;

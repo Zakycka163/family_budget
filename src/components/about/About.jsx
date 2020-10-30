@@ -1,10 +1,10 @@
 import PageTitle from "../PageTitle";
 import React from "react";
 
-const About = () => {
+const About = (props) => {
     return (
         <div>
-            <PageTitle name="О системе"/>
+            <PageTitle title={props.title}/>
             <div className="jumbotron jumbotron-fluid">
                 <div className="container">
                     <h4>
