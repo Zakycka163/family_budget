@@ -7,3 +7,5 @@ const Doc = async () => {
     console.log(doc.title);
     this.setState({name: doc.title});
 }
+
+export default Doc;
