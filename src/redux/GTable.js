@@ -1,6 +1,9 @@
 import {GoogleSpreadsheet} from "google-spreadsheet";
 import state from './state';
 
+let RenderRoot = () => {
+
+}
 
 const GTable = async () => {
     const doc = new GoogleSpreadsheet("1k_Gg8R0Z6W_UUIqNA_oELWUZZN5hbRU8QQEJTmtigzQ");
@@ -12,7 +15,11 @@ const GTable = async () => {
     const sheet = doc.sheetsByIndex[0];
     const rows = await sheet.getRows();
     state.google.table = rows;
+    RenderRoot();
+}
 
+export const subscribe = (observer) => {
+    RenderRoot = observer;
 }
 
 export default GTable;
