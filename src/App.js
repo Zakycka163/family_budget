@@ -14,7 +14,7 @@ const App = (props) => {
       <NavBar menu={lang.menu} />
       <Route exact path="/" render={ () => <MainPage title={lang.menu.main.title} />}/>
       <Route path="/about" render={() => <About title={lang.menu.about} />}/>
-      <Route path="/google-sheet" render={() => <Dev title={lang.menu.dev} />}/>
+      <Route path="/google-sheet" render={() => <Dev title={lang.menu.dev} doc={props.doc}/>}/>
       <Footer city={lang.footer} />
     </div>
   );
