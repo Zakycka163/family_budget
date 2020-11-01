@@ -2,17 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router} from "react-router-dom";
 import App from './App';
-import state from './redux/state'
-import GTable, { subscribe } from "./redux/GTable"
+import store from './redux/store'
 
-const RenderRoot = () => {
+const rerenderEntireTree = () => {
     ReactDOM.render(
         <Router>
-            <App lang={state.lang} doc={state.google} actions={GTable}/>
+            <App lang={store.getState().lang} doc={store.getState().google} actions={store.table.bind(store)}/>
         </Router>, 
     document.getElementById('root')
     );
 }
-RenderRoot();
+rerenderEntireTree();
 
-subscribe(RenderRoot);
+store.subscribe(rerenderEntireTree);
