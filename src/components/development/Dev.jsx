@@ -19,13 +19,15 @@ const tableBody = (table) => {
 }
 
 const Dev = (props) => {
-    let GTable = props.actions;
+    let GTable = () => {
+        props.dispatch({type:'GET-TABLE'});
+    }
     return (
         <div>
             <PageTitle title={props.title} />
             <div className="px-3 py-2 bg-success text-white page-title">
                 <div className="h5">{props.doc.name}</div>
-                <button className="" onClick={GTable}>Обновить</button>
+                <button className="" onClick={ GTable }>Обновить</button>
             </div>
             <div className="px-3 py-4 bg-light">
                 <table className="table table-bordered table-sm">
