@@ -25,9 +25,13 @@ const Dev = (props) => {
     return (
         <div>
             <PageTitle title={props.title} />
+
             <div className="px-3 py-2 bg-success text-white page-title">
+                <div className="btn-group btn-group-sm">
+                    <button type="button" className="btn btn-primary mr-md-1" onClick={ GTable }>Получить данные о файле</button>
+                    <button className="btn btn-primary mr-md-1">Получить листа</button>
+                </div>
                 <div className="h5">{props.doc.name}</div>
-                <button className="" onClick={ GTable }>Обновить</button>
             </div>
             <div className="px-3 py-4 bg-light">
                 <table className="table table-bordered table-sm">
