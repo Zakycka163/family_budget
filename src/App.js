@@ -8,14 +8,14 @@ import MainPage from "./components/main/MainPage";
 import Dev from "./components/development/Dev";
 
 const App = (props) => {
-    let lang = props.state.lang.en;
+
   return (
     <div className="App">
-      <NavBar menu={lang.menu} />
-      <Route exact path="/" render={ () => <MainPage title={lang.menu.main.title} />}/>
-      <Route path="/about" render={() => <About title={lang.menu.about} />}/>
-      <Route path="/google-sheet" render={() => <Dev title={lang.menu.dev} state={props.state.google} dispatch={props.dispatch}/>}/>
-      <Footer city={lang.footer} />
+      <NavBar menu={props.state.lang.menu} dispatch={props.dispatch} />
+      <Route exact path="/" render={ () => <MainPage title={props.state.lang.menu.main.title} />}/>
+      <Route path="/about" render={() => <About title={props.state.lang.menu.about} />}/>
+      <Route path="/google-sheet" render={() => <Dev title={props.state.lang.menu.dev} dispatch={props.dispatch}/>}/>
+      <Footer city={props.state.lang.footer} />
     </div>
   );
 }
