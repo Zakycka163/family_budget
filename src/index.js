@@ -7,7 +7,7 @@ import store from './redux/store'
 const rerenderEntireTree = () => {
     ReactDOM.render(
         <Router>
-            <App lang={store.getState().lang} doc={store.getState().google} dispatch={store.dispatch.bind(store)}/>
+            <App state={store.getState()} dispatch={store.dispatch.bind(store)}/>
         </Router>, 
     document.getElementById('root')
     );
