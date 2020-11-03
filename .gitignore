@@ -11,6 +11,7 @@
 # production
 /build
 /src/redux/family-budget-294015-d25af06bcf48.json
+/src/redux/family-budget-294015-a5b7aaae1111.json
 
 # misc
 .DS_Store
@@ -23,3 +24,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
