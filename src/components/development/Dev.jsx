@@ -31,12 +31,12 @@ const Dev = (props) => {
                     <button type="button" className="btn btn-primary mr-md-1" onClick={ GTable }>Получить данные о файле</button>
                     <button className="btn btn-primary mr-md-1">Получить листа</button>
                 </div>
-                <div className="h5">{props.doc.name}</div>
+                <div className="h5">{props.state.name}</div>
             </div>
             <div className="px-3 py-4 bg-light">
                 <table className="table table-bordered table-sm">
                     <tbody>
-                        {tableBody(props.doc.table)}
+                        {tableBody(props.state.table)}
                     </tbody>
                 </table>
             </div>
