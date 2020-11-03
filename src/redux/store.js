@@ -1,8 +1,9 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
+import lang from "./lang"
 
 let store = {
     _state: {
-        lang: require("./lang.json"),
+        lang,
         google: {
             name: "Wait",
             table: []
