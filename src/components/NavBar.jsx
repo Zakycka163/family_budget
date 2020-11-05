@@ -21,6 +21,7 @@ const NavBar = (props) => {
                 </li>
             </ul>
             <form className="form-inline">
+                <span className="mr-md-1"><img src={"/img/"+props.menu.lang+"_flag.png"} height="35px" alt="flag" /></span>
                 <select className="custom-select mr-md-3" value={props.menu.lang} onChange={onLangChange}>
                     <option value="en">en</option>
                     <option value="ru">ru</option>
