@@ -1,12 +1,8 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import {changeLangCreator} from "../redux/lang-reducer";
+import Lang from "./Lang";
 
 const NavBar = (props) => {
-    let onLangChange = (e) => {
-        let value = e.target.value;
-        props.dispatch(changeLangCreator(value));
-    }
     return (
         <nav className="navbar bg-light sticky-top d-lg-flex">
             <ul className="nav nav-pills nav-sm">
@@ -21,11 +17,7 @@ const NavBar = (props) => {
                 </li>
             </ul>
             <form className="form-inline">
-                <span className="mr-md-1"><img src={"/img/"+props.menu.lang+"_flag.png"} height="35px" alt="flag" /></span>
-                <select className="custom-select mr-md-3" value={props.menu.lang} onChange={onLangChange}>
-                    <option value="en">en</option>
-                    <option value="ru">ru</option>
-                </select>
+                <Lang lang={props.menu.lang} dispatch={props.dispatch} />
                 <NavLink className="btn btn-success" to="/login">{props.menu.login}</NavLink>
             </form>
         </nav>
