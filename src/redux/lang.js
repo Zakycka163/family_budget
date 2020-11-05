@@ -1,23 +1,17 @@
 const lang = {
     en:{
         menu: {
-            main: {
-                item: "Main",
-                title: "Main page"
-            },
+            main: "Main",
             dev: "Development",
             about: "About",
             lang: "en",
             login: "Login"
         },
-        footer: "Saint Petersburg"
+        footer: "Saint-Petersburg"
     },
     ru:{
         menu: {
-            main: {
-                "item": "Главная",
-                "title": "Главная страница"
-            },
+            main: "Главная",
             dev: "Разработка",
             about: "Инфо",
             lang: "ru",

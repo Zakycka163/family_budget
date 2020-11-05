@@ -3,11 +3,7 @@ import PageTitle from "../PageTitle";
 
 const tableBody = (table) => {
     if ( table === null) {
-        return (
-            <tr>
-                <td>Пустой список</td>
-            </tr>
-        )
+        return (<tr><td>Пустой список</td></tr>)
     } else {
         let x = table.map((row, x) => (
             <tr key={x}>

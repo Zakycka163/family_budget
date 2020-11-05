@@ -12,7 +12,7 @@ const App = (props) => {
   return (
     <div className="App">
       <NavBar menu={props.state.lang.menu} dispatch={props.dispatch} />
-      <Route exact path="/" render={ () => <MainPage title={props.state.lang.menu.main.title} />}/>
+      <Route exact path="/" render={ () => <MainPage title={props.state.lang.menu.main} />}/>
       <Route path="/about" render={() => <About title={props.state.lang.menu.about} />}/>
       <Route path="/google-sheet" render={() => <Dev title={props.state.lang.menu.dev} dispatch={props.dispatch}/>}/>
       <Footer city={props.state.lang.footer} />
