@@ -4,18 +4,16 @@ import Lang from "./Lang";
 
 const NavBar = (props) => {
     let works_tabs = '';
-    if (props.menu) {
 
-    }
     return (
         <nav className="navbar bg-light sticky-top d-lg-flex">
             <ul className="nav nav-pills nav-sm">
                 <li className="nav-item">
-                    <NavLink className="btn btn-light" exact to="/">{props.menu.main}</NavLink>
+                    <NavLink className="btn btn-light" exact to="/">{props.menu.main.title}</NavLink>
                 </li>
                 {works_tabs}
                 <li className="nav-item">
-                    <NavLink className="btn btn-light" to="/google-sheet">{props.menu.dev}</NavLink>
+                    <NavLink className="btn btn-light" to="/google-sheet">{props.menu.dev.title}</NavLink>
                 </li>
                 <li className="nav-item">
                     <NavLink className="btn btn-light" to="/about">{props.menu.about.title}</NavLink>

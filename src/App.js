@@ -9,15 +9,14 @@ import Dev from "./components/development/Dev";
 import Profile from "./components/profile/Profile";
 
 const App = (props) => {
-
   return (
     <div className="App">
-      <NavBar menu={props.state.lang.menu} dispatch={props.dispatch} />
-      <Route exact path="/" render={() => <MainPage title={props.state.lang.menu.main} />}/>
-      <Route path="/about" render={() => <About state={props.state.lang.menu.about} />}/>
-      <Route path="/google-sheet" render={() => <Dev title={props.state.lang.menu.dev} dispatch={props.dispatch}/>}/>
-      <Route path="/profile" render={() => <Profile state={props.state.lang.menu.profile} dispatch={props.dispatch}/>}/>
-      <Footer city={props.state.lang.footer} />
+      <NavBar menu={props.state.menu} dispatch={props.dispatch} />
+      <Route exact path="/" render={() => <MainPage state={props.state.menu.main} />}/>
+      <Route path="/about" render={() => <About state={props.state.menu.about} />}/>
+      <Route path="/google-sheet" render={() => <Dev state={props.state.menu.dev} dispatch={props.dispatch}/>}/>
+      <Route path="/profile" render={() => <Profile state={props.state.menu.profile} dispatch={props.dispatch}/>}/>
+      <Footer city={props.state.footer} />
     </div>
   );
 }
