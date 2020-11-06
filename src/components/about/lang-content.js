@@ -1,5 +1,6 @@
 const aboutContent = {
     en:{
+        title: "About",
         content: {
             position: "Developer",
             name: "D.A. Stavinsky",
@@ -8,6 +9,7 @@ const aboutContent = {
         }
     },
     ru:{
+        title: "Инфо",
         content: {
             position: "Разработчик",
             name: "Ставинский Д.А.",

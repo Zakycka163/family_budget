@@ -1,5 +1,6 @@
 const profileContent = {
     en:{
+        title: "Profile",
         content: {
             save: "Save",
             login: "Login",
@@ -7,6 +8,7 @@ const profileContent = {
         }
     },
     ru:{
+        title: "Профиль",
         content: {
             save: "Сохранить",
             login: "Логин",
