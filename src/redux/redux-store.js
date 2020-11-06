@@ -2,7 +2,7 @@ import {combineReducers, createStore} from "redux";
 import langReducer from "./lang-reducer";
 
 let reducers = combineReducers({
-    lang: langReducer
+    elements: langReducer
 });
 
 let store = createStore(reducers);
