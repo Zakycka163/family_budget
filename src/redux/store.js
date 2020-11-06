@@ -1,9 +1,8 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
-import lang from "./lang"
 
 let store = {
     _state: {
-        lang,
+        lang: {},
         google: {
             name: "Wait",
             table: []
@@ -23,24 +22,6 @@ let store = {
             ]
         }
     },
-    _callSubscriber() {
-        console.log('State changed');
-    },
-    getState(){
-        return this._state;
-    },
-    subscribe(observer) {
-        this._callSubscriber = observer;
-    },
-    dispatch(action){
-        if (action.type === 'GET-TABLE') {
-            this._table().then(value => {
-                console.log(value); // Success!
-            }, reason => {
-                console.error(reason); // Error!
-            });
-        }
-    },
     async _table() {
         const doc = new GoogleSpreadsheet("1k_Gg8R0Z6W_UUIqNA_oELWUZZN5hbRU8QQEJTmtigzQ");
         await doc.useServiceAccountAuth(require('./family-budget-294015-a5b7aaae1111'));
@@ -51,7 +32,6 @@ let store = {
         let title = sheet.title;
         this._state.google.name = title;
         this._state.google.table = rows;
-        this._callSubscriber();
     }
 }
 
