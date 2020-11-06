@@ -14,7 +14,7 @@ const tableBody = (table) => {
     }
 }
 
-const Dev = (props) => {
+const Dev2 = (props) => {
     /*let GTable = () => {
         props.dispatch({type:'GET-TABLE'});
     }*/
@@ -35,6 +35,18 @@ const Dev = (props) => {
                         {tableBody([])}
                     </tbody>
                 </table>
+            </div>
+        </div>
+    )
+}
+const Dev = (props) => {
+    return (
+        <div>
+            <PageTitle title={props.title} />
+            <div className="px-3 py-4 bg-light">
+                <div className="d-flex justify-content-center">
+                    <div className="spinner-border" role="status" />
+                </div>
             </div>
         </div>
     )
