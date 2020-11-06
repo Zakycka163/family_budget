@@ -4,7 +4,10 @@ const lang = {
             main: "Main",
             dev: "Development",
             about: "About",
-            lang: "en",
+            lang: {
+                en: "en_active_flag",
+                ru: "ru_flag",
+            },
             login: "Login"
         },
         footer: "Saint-Petersburg"
@@ -14,7 +17,10 @@ const lang = {
             main: "Главная",
             dev: "Разработка",
             about: "Инфо",
-            lang: "ru",
+            lang: {
+                en: "en_flag",
+                ru: "ru_active_flag",
+            },
             login: "Вход"
         },
         footer: "Санкт-Петербург"
