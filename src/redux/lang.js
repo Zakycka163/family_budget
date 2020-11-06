@@ -4,7 +4,7 @@ const lang = {
             main: "Main",
             dev: "Development",
             about: "About",
-            lang: {
+            flags: {
                 en: "en_active_flag",
                 ru: "ru_flag",
             },
@@ -17,7 +17,7 @@ const lang = {
             main: "Главная",
             dev: "Разработка",
             about: "Инфо",
-            lang: {
+            flags: {
                 en: "en_flag",
                 ru: "ru_active_flag",
             },

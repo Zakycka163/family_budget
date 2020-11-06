@@ -3,22 +3,27 @@ import {NavLink} from "react-router-dom";
 import Lang from "./Lang";
 
 const NavBar = (props) => {
+    let works_tabs = '';
+    if (props.menu) {
+
+    }
     return (
         <nav className="navbar bg-light sticky-top d-lg-flex">
             <ul className="nav nav-pills nav-sm">
                 <li className="nav-item">
                     <NavLink className="btn btn-light" exact to="/">{props.menu.main}</NavLink>
                 </li>
+                {works_tabs}
                 <li className="nav-item">
                     <NavLink className="btn btn-light" to="/google-sheet">{props.menu.dev}</NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink className="btn btn-light" to="/about">{props.menu.about}</NavLink>
+                    <NavLink className="btn btn-light" to="/about">{props.menu.about.title}</NavLink>
                 </li>
             </ul>
             <form className="form-inline">
-                <Lang lang={props.menu.lang} dispatch={props.dispatch} />
-                <NavLink className="btn btn-success" to="/login">{props.menu.login}</NavLink>
+                <Lang flags={props.menu.flags} dispatch={props.dispatch} />
+                <NavLink className="btn btn-success" to="/profile">{props.menu.login}</NavLink>
             </form>
         </nav>
     )
