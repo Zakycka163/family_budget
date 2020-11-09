@@ -1,5 +1,5 @@
 const profileContent = {
-    en:{
+    en: {
         title: "Profile",
         content: {
             save: "Save",
@@ -7,7 +7,7 @@ const profileContent = {
             name: "Name"
         }
     },
-    ru:{
+    ru: {
         title: "Профиль",
         content: {
             save: "Сохранить",
