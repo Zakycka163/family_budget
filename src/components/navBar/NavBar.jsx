@@ -1,6 +1,6 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import Lang from "./Lang";
+import LangContainer from "./endBar/lang/LangContainer";
 
 const NavBar = (props) => {
     let works_tabs = '';
@@ -20,7 +20,7 @@ const NavBar = (props) => {
                 </li>
             </ul>
             <form className="form-inline">
-                <Lang flags={props.menu.flags} dispatch={props.dispatch} />
+                <LangContainer store={props.store} />
                 <NavLink className="btn btn-success" to="/profile">{props.menu.login}</NavLink>
             </form>
         </nav>

@@ -1,11 +1,9 @@
 import React from "react";
-import {changeLangCreator} from "../../redux/lang-reducer";
-
 
 const Lang = (props) => {
     let onLangChange = (e) => {
         let value = e.target.alt;
-        props.dispatch(changeLangCreator(value));
+        props.changeLang(value);
     }
     return (
         <div className="mr-md-2">
