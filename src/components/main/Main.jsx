@@ -1,7 +1,7 @@
 import React from "react";
 import PageTitle from "../PageTitle";
 
-const MainPage = (props) => {
+const Main = (props) => {
     return (
         <div>
             <PageTitle title={props.page.title} />
@@ -9,4 +9,4 @@ const MainPage = (props) => {
     )
 }
 
-export default MainPage;
+export default Main;
