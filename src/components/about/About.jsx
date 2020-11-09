@@ -1,4 +1,3 @@
-import PageTitle from "../PageTitle";
 import React from "react";
 
 const About = (props) => {
