@@ -1,7 +1,7 @@
-import aboutContent from "../components/about/lang-content";
-import profileContent from "../components/profile/lang-content";
-import mainContent from "../components/main/lang-content";
-import devContent from "../components/development/lang-content";
+import aboutContent from "../components/pages/about/lang-content";
+import profileContent from "../components/pages/profile/lang-content";
+import mainContent from "../components/pages/main/lang-content";
+import devContent from "../components/pages/development/lang-content";
 
 const lang = {
     en:{

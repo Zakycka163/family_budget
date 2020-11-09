@@ -2,11 +2,11 @@ import React from "react";
 import "./App.css"
 import {Route} from "react-router-dom";
 import NavBarContainer from "./components/navBar/NavBarContainer";
-import MainContainer from "./components/main/MainContainer";
-import AboutContainer from "./components/about/AboutContainer";
+import MainContainer from "./components/pages/main/MainContainer";
+import AboutContainer from "./components/pages/about/AboutContainer";
 import FooterContainer from "./components/footer/FooterContainer";
-import ProfileContainer from "./components/profile/ProfileContainer";
-import DevContainer from "./components/development/DevContainer";
+import ProfileContainer from "./components/pages/profile/ProfileContainer";
+import DevContainer from "./components/pages/development/DevContainer";
 
 const App = (props) => {
     return (
