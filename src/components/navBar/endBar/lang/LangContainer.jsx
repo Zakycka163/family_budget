@@ -1,15 +1,19 @@
 import React from "react";
 import {changeLangCreator} from "../../../../redux/lang-reducer";
 import Lang from "./Lang";
+import {connect} from "react-redux";
 
-const LangContainer = (props) => {
-    let flags = props.store.getState().elements.menu.flags;
-    let onLangChange = (value) => {
-        props.store.dispatch(changeLangCreator(value));
+const mapStateToProps = (state) => {
+    return {
+        flags: state.elements.menu.flags
     }
-    return (
-        <Lang changeLang={onLangChange} flags={flags} />
-    )
 }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onLangChange: (value) => dispatch(changeLangCreator(value))
+    }
+}
+
+const LangContainer = connect(mapStateToProps, mapDispatchToProps) (Lang)
 
 export default LangContainer;
