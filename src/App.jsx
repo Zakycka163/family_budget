@@ -1,23 +1,22 @@
 import React from "react";
 import "./App.css"
 import {Route} from "react-router-dom";
-import Footer from "./components/Footer";
-import About from "./components/about/About";
-import MainPage from "./components/main/MainPage";
-import Dev from "./components/development/Dev";
-import Profile from "./components/profile/Profile";
 import NavBarContainer from "./components/navBar/NavBarContainer";
+import MainPageContainer from "./components/main/MainPageContainer";
+import AboutContainer from "./components/about/AboutContainer";
+import FooterContainer from "./components/footer/FooterContainer";
+import ProfileContainer from "./components/profile/ProfileContainer";
+import DevContainer from "./components/development/DevContainer";
 
 const App = (props) => {
-    let state = props.store.getState().elements;
     return (
         <div className="App">
-            <NavBarContainer store={props.store}  />
-            <Route exact path="/" render={() => <MainPage state={state.menu.main} />}/>
-            <Route path="/about" render={() => <About state={state.menu.about} />}/>
-            <Route path="/google-sheet" render={() => <Dev state={state.menu.dev} dispatch={props.store.dispatch}/>}/>
-            <Route path="/profile" render={() => <Profile state={state.menu.profile} dispatch={props.store.dispatch}/>}/>
-            <Footer city={state.footer} />
+            <NavBarContainer store={props.store} />
+            <Route exact path="/" render={() => <MainPageContainer store={props.store} />}/>
+            <Route path="/about" render={() => <AboutContainer store={props.store} />}/>
+            <Route path="/google-sheet" render={() => <DevContainer store={props.store}/>}/>
+            <Route path="/profile" render={() => <ProfileContainer store={props.store}/>}/>
+            <FooterContainer store={props.store} />
         </div>
     );
 }

@@ -6,31 +6,45 @@ import devContent from "../components/development/lang-content";
 const lang = {
     en:{
         menu: {
-            main: mainContent.en,
-            dev: devContent.en,
-            about: aboutContent.en,
-            profile: profileContent.en,
+            main: "Main",
+            dev: "Development",
+            about: "About",
             flags: {
                 en: "en_active_flag",
                 ru: "ru_flag",
             },
             login: "Login"
         },
-        footer: "Saint-Petersburg"
+        page: {
+            main: mainContent.en,
+            dev: devContent.en,
+            about: aboutContent.en,
+            profile: profileContent.en,
+        },
+        footer: {
+            city: "Saint-Petersburg"
+        }
     },
     ru:{
         menu: {
-            main: mainContent.ru,
-            dev: devContent.ru,
-            about: aboutContent.ru,
-            profile: profileContent.ru,
+            main: "Главная",
+            dev: "Разработка",
+            about: "Инфо",
             flags: {
                 en: "en_flag",
                 ru: "ru_active_flag",
             },
             login: "Вход"
         },
-        footer: "Санкт-Петербург"
+        page: {
+            main: mainContent.ru,
+            dev: devContent.ru,
+            about: aboutContent.ru,
+            profile: profileContent.ru,
+        },
+        footer: {
+            city: "Санкт-Петербург"
+        }
     }
 }
 

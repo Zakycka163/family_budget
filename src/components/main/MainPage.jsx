@@ -4,7 +4,7 @@ import PageTitle from "../PageTitle";
 const MainPage = (props) => {
     return (
         <div>
-            <PageTitle title={props.state.title} />
+            <PageTitle title={props.page.title} />
         </div>
     )
 }
