@@ -7,11 +7,10 @@ const langReducer = (state = initialState, action) =>{
     switch (action.type){
         case LANG_CHANGE:
             if (action.value === 'ru'){
-                state = lang.ru;
+                return lang.ru;
             } else {
-                state = lang.en;
+                return lang.en;
             }
-            return state;
         default: return state;
     }
 }

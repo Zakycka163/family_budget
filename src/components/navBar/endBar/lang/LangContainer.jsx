@@ -1,4 +1,3 @@
-import React from "react";
 import {changeLangCreator} from "../../../../redux/lang-reducer";
 import Lang from "./Lang";
 import {connect} from "react-redux";

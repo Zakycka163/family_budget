@@ -1,4 +1,3 @@
-import React from "react";
 import EndBar from "./EndBar";
 import {connect} from "react-redux";
 
