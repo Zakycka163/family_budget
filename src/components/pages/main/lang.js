@@ -1,4 +1,4 @@
-const mainContent = {
+const mainPage = {
     en:{
         title: "Main"
     },
@@ -7,4 +7,4 @@ const mainContent = {
     }
 }
 
-export default mainContent;
+export default mainPage;

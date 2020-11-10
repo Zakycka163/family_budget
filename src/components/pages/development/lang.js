@@ -1,4 +1,4 @@
-const devContent = {
+const devPage = {
     en:{
         title: "Development"
     },
@@ -7,4 +7,4 @@ const devContent = {
     }
 }
 
-export default devContent;
+export default devPage;

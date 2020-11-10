@@ -1,4 +1,4 @@
-const profileContent = {
+const profilePage = {
     en: {
         title: "Profile",
         content: {
@@ -17,4 +17,4 @@ const profileContent = {
     }
 }
 
-export default profileContent;
+export default profilePage;
