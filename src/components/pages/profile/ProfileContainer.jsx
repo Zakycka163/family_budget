@@ -1,15 +1,13 @@
 import React from "react";
-import PageTitle from "../PageTitle";
 import Profile from "./Profile";
+import {connect} from "react-redux";
 
-const ProfileContainer = (props) => {
-    let page = props.store.getState().elements.page.profile;
-    return (
-        <div>
-            <PageTitle title={page.title} />
-            <Profile content={page.content}/>
-        </div>
-    )
+const mapStateToProps = (state) => {
+    return {
+        page: state.elements.page.profile
+    }
 }
+
+const ProfileContainer = connect(mapStateToProps) (Profile);
 
 export default ProfileContainer;

@@ -14,6 +14,6 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-const LangContainer = connect(mapStateToProps, mapDispatchToProps) (Lang)
+const LangContainer = connect(mapStateToProps, mapDispatchToProps) (Lang);
 
 export default LangContainer;

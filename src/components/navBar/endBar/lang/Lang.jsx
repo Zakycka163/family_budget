@@ -1,7 +1,7 @@
 import React from "react";
 
 const Lang = (props) => {
-    let LangChange = (e) => {
+    let onLangChange = (e) => {
         let value = e.target.alt;
         props.onLangChange(value);
     }
@@ -12,13 +12,13 @@ const Lang = (props) => {
                  type="button"
                  height="30px"
                  alt="en"
-                 onClick={LangChange} />
+                 onClick={onLangChange} />
             <img className="mr-md-1"
                  src={"/img/"+props.flags.ru+".png"}
                  type="button"
                  height="30px"
                  alt="ru"
-                 onClick={LangChange} />
+                 onClick={onLangChange} />
         </div>
     
     )

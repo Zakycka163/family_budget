@@ -1,15 +1,13 @@
 import React from "react";
-import LangContainer from "./lang/LangContainer";
 import EndBar from "./EndBar";
+import {connect} from "react-redux";
 
-const EndBarContainer = (props) => {
-    let login = props.store.getState().elements.menu.login;
-    return (
-        <form className="form-inline">
-            <LangContainer store={props.store} />
-            <EndBar login={login}/>
-        </form>
-    )
+const mapStateToProps = (state) => {
+    return {
+        login: state.elements.menu.login
+    }
 }
+
+const EndBarContainer = connect(mapStateToProps) (EndBar);
 
 export default EndBarContainer;

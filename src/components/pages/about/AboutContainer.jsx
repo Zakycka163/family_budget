@@ -1,15 +1,13 @@
 import React from "react";
 import About from "./About";
-import PageTitle from "../PageTitle";
+import {connect} from "react-redux";
 
-const AboutContainer = (props) => {
-    let page = props.store.getState().elements.page.about;
-    return (
-        <div>
-            <PageTitle title={page.title}/>
-            <About content={page.content} />
-        </div>
-    )
+const mapStateToProps = (state) => {
+    return {
+        page: state.elements.page.about
+    }
 }
+
+const AboutContainer = connect(mapStateToProps) (About);
 
 export default AboutContainer;

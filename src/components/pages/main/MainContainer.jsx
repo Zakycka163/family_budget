@@ -1,15 +1,13 @@
 import React from "react";
 import Main from "./Main";
-import PageTitle from "../PageTitle";
+import {connect} from "react-redux";
 
-const MainContainer = (props) => {
-    let page = props.store.getState().elements.page.main;
-    return (
-        <div>
-            <PageTitle title={page.title} />
-            <Main content={page.content} />
-        </div>
-    )
+const mapStateToProps = (state) => {
+    return {
+        page: state.elements.page.main
+    }
 }
+
+const MainContainer = connect(mapStateToProps) (Main);
 
 export default MainContainer;

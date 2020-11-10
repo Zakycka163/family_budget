@@ -1,15 +1,13 @@
 import React from "react";
 import Dev from "./Dev";
-import PageTitle from "../PageTitle";
+import {connect} from "react-redux";
 
-const DevContainer = (props) => {
-    let page = props.store.getState().elements.page.dev;
-    return (
-        <div>
-            <PageTitle title={page.title} />
-            <Dev page={page.content} dispatch={props.store.dispatch}/>
-        </div>
-    )
+const mapStateToProps = (state) => {
+    return {
+        page: state.elements.page.dev
+    }
 }
+
+const DevContainer = connect(mapStateToProps) (Dev);
 
 export default DevContainer;
