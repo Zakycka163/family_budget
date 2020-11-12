@@ -1,6 +1,12 @@
 import React from "react";
 
-const TableBody = (table) => {
+class TableBody extends React.Component {
+    render(){
+        return (<tr><td>Пустой список</td></tr>)
+    }
+}
+
+const TableBody2 = (table) => {
     if ( table === null) {
         return (<tr><td>Пустой список</td></tr>)
     } else {

@@ -1,23 +1,33 @@
-//import { GoogleSpreadsheet } from "google-spreadsheet";
+import {GoogleSpreadsheet} from "google-spreadsheet";
+import * as creads from "./family-budget-294015-a5b7aaae1111.json"
 
-const LANG_CHANGE = 'LANG_CHANGE';
+const AUTH = 'AUTH';
+//const SET_NAME = 'SET_NAME';
 
-import lang from "./lang";
-
+let client_email = creads.client_email;
+let private_key = creads.private_key;
+const docId = '1k_Gg8R0Z6W_UUIqNA_oELWUZZN5hbRU8QQEJTmtigzQ';
 const initialState = '';
 
-const devReducer = (state=initialState, action) =>{
-    switch (action.type){
-        case LANG_CHANGE:
-            if (action.value === 'ru'){
-                return lang.ru;
-            } else {
-                return lang.en;
-            }
-        default: return state;
+const auth = async () => {
+    const doc = new GoogleSpreadsheet(docId);
+    await doc.useServiceAccountAuth({
+        client_email: client_email,
+        private_key: private_key,
+    });
+    await doc.loadInfo();
+    return doc.title;
+}
+
+const devReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case AUTH:
+            auth().then(r => {return "Hello"});
+        default:
+            return state;
     }
 }
 
-//export const changeLangCreator = (value) => ({type: LANG_CHANGE, value: value})
+export const authCreator = () => ({type: AUTH})
 
 export default devReducer;
