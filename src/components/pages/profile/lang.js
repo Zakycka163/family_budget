@@ -2,17 +2,17 @@ const profilePage = {
     en: {
         title: "Profile",
         content: {
-            save: "Save",
+            save: "Login",
             login: "Login",
-            name: "Name"
+            password: "Password"
         }
     },
     ru: {
         title: "Профиль",
         content: {
-            save: "Сохранить",
+            save: "Войти",
             login: "Логин",
-            name: "Имя"
+            password: "Пароль"
         }
     }
 }
