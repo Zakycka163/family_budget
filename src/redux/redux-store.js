@@ -4,7 +4,7 @@ import devReducer from "./dev-reducer";
 
 let reducers = combineReducers({
     elements: langReducer,
-    stateGoogle: devReducer
+    googleDoc: devReducer
 });
 
 let store = createStore(reducers);
