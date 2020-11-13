@@ -1,16 +1,20 @@
-const SET_DOC_NAME = 'SET_DOC_NAME';
+const SET_DOC_PROP = 'SET_DOC_PROP';
 
-const initialState = '';
+const initialState = {
+    title: '',
+    sheetCount: 0
+}
 
 const devReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_DOC_NAME:
-            return action.name;
+        case SET_DOC_PROP:
+            return {title: action.property.title,
+                sheetCount: action.property.sheetCount};
         default:
             return state;
     }
 }
 
-export const setDocName = (name) => ({type: SET_DOC_NAME, name})
+export const setDocProperty = (property) => ({type: SET_DOC_PROP, property})
 
 export default devReducer;
