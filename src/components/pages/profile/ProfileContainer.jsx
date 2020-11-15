@@ -1,6 +1,6 @@
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {changeLoginCreator, changePassCreator} from "../../../redux/profile-reducer";
+import {changeLoginCreator, changePassCreator, loginCreator} from "../../../redux/profile-reducer";
 
 const mstp = (state) => {
     return {
@@ -12,7 +12,8 @@ const mstp = (state) => {
 const mdtp = (dispatch) => {
     return {
         onLoginUpdate: (val) => dispatch(changeLoginCreator(val)),
-        onPasswordUpdate: (val) => dispatch(changePassCreator(val))
+        onPasswordUpdate: (val) => dispatch(changePassCreator(val)),
+        onLogin: () => dispatch(loginCreator())
     }
 }
 

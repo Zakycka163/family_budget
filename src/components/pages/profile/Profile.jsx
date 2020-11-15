@@ -28,7 +28,7 @@ const Profile = (props) => {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <input className="btn btn-success btn-sm" type="button" value={page.content.save} />
+                        <button className="btn btn-success btn-sm" onClick={props.onLogin}>{page.content.save}</button>
                     </div>
                 </div>
             </div>
