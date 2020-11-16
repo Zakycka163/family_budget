@@ -1,5 +1,6 @@
 import React from "react";
 import PageTitle from "../PageTitle";
+import Notification from "../../common/alert";
 
 const Profile = (props) => {
     let page = props.page;

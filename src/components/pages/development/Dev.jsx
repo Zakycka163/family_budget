@@ -1,6 +1,6 @@
 import React from "react";
 import PageTitle from "../PageTitle";
-import Loader from "../../Loader";
+import Loader from "../../common/Loader";
 
 const Dev = (props) => {
     let pages = [];
