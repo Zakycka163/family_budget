@@ -1,4 +1,4 @@
-import {changeLangCreator} from "../../../../redux/lang-reducer";
+import {changeLang} from "../../../../redux/lang-reducer";
 import Lang from "./Lang";
 import {connect} from "react-redux";
 
@@ -7,11 +7,7 @@ const mstp = (state) => {
         flags: state.elements.menu.flags
     }
 }
-const mdtp = (dispatch) => {
-    return {
-        onLangChange: (value) => dispatch(changeLangCreator(value))
-    }
-}
+const mdtp = {changeLang}
 
 const LangContainer = connect(mstp, mdtp) (Lang);
 

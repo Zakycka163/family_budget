@@ -15,6 +15,6 @@ const langReducer = (state = initialState, action) =>{
     }
 }
 
-export const changeLangCreator = (value) => ({type: LANG_CHANGE, value: value})
+export const changeLang = (value) => ({type: LANG_CHANGE, value: value})
 
 export default langReducer;

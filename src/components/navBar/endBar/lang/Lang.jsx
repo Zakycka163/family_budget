@@ -3,7 +3,7 @@ import React from "react";
 const Lang = (props) => {
     let onLangChange = (e) => {
         let value = e.target.alt;
-        props.onLangChange(value);
+        props.changeLang(value);
     }
     return (
         <div className="mr-md-2">

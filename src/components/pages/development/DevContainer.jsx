@@ -9,11 +9,7 @@ const mstp = (state) => {
         doc: state.googleDoc
     }
 }
-const mdtp = (dispatch) => {
-    return {
-        setDocProperty: (val) => dispatch(setDocProperty(val))
-    }
-}
+const mdtp = {setDocProperty}
 
 const DevContainer = connect(mstp, mdtp) (DevAPIContainer);
 
