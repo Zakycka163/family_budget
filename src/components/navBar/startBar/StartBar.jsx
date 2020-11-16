@@ -2,21 +2,15 @@ import React from "react";
 import {NavLink} from "react-router-dom";
 
 const StartBar = (props) => {
-    let menu = props.menu;
-    let works_tabs = '';
-
+    let tabs = props.items.map((e, i) => {
+        return  <li className="nav-item" key={i}>
+                    <NavLink className="btn btn-light" exact to={e.path}>{e.title}</NavLink>
+                </li>
+        }
+    );
     return (
         <ul className="nav nav-pills nav-sm">
-            <li className="nav-item">
-                <NavLink className="btn btn-light" exact to="/">{menu.main}</NavLink>
-            </li>
-            {works_tabs}
-            <li className="nav-item">
-                <NavLink className="btn btn-light" to="/google-sheet">{menu.dev}</NavLink>
-            </li>
-            <li className="nav-item">
-                <NavLink className="btn btn-light" to="/about">{menu.about}</NavLink>
-            </li>
+            {tabs}
         </ul>
     )
 }

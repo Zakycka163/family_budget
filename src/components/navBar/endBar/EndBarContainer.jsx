@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
     return {
-        login: state.elements.menu.login
+        items: state.elements.menu.end_items
     }
 }
 
