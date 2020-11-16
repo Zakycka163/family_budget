@@ -1,6 +1,5 @@
 import React from "react";
 import PageTitle from "../PageTitle";
-import Notification from "../../common/alert";
 
 const Profile = (props) => {
     let page = props.page;
@@ -45,7 +44,7 @@ const Profile = (props) => {
                     <div className="col">
                         <button className="btn btn-success btn-sm"
                                 onClick={onLoginClick}>
-                            {page.content.save}
+                            {page.content.buttons.signIn}
                         </button>
                     </div>
                 </div>

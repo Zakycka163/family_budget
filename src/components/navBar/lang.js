@@ -4,7 +4,7 @@ import end_items from "./endBar/lang";
 const menu = {
     en:{
         start_items: start_items.en.map((e, i) => {return {title: e, ...start_items.properties[i]}}),
-        end_items: end_items.en.map((e, i)=> {return {title: e, ...end_items.properties[i]}}),
+        end_items: end_items.en.map((e)=> {return {...e, ...end_items.properties[0]}}),
         flags: {
             en: "en_active_flag",
             ru: "ru_flag",
@@ -12,7 +12,7 @@ const menu = {
     },
     ru:{
         start_items: start_items.ru.map((e, i)=> {return {title: e, ...start_items.properties[i]}}),
-        end_items: end_items.ru.map((e, i)=> {return {title: e, ...end_items.properties[i]}}),
+        end_items: end_items.ru.map((e)=> {return {...e, ...end_items.properties[0]}}),
         flags: {
             en: "en_flag",
             ru: "ru_active_flag",

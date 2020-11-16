@@ -3,7 +3,9 @@ import {connect} from "react-redux";
 
 const mapStateToProps = (state) => {
     return {
-        items: state.elements.menu.end_items
+        items: (state.profile.is_active === true)
+            ? state.elements.menu.end_items.filter(e => e.is_SingIn === true)
+            : state.elements.menu.end_items.filter(e => e.is_SingIn === false)
     }
 }
 

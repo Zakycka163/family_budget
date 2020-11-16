@@ -29,7 +29,10 @@ const profilePage = {
     en: {
         title: "Profile",
         content: {
-            save: "Login",
+            buttons: {
+                signIn: "Sign In",
+                signOut: "Sign Out"
+            },
             login: "Login",
             password: "Password"
         },
@@ -42,7 +45,10 @@ const profilePage = {
     ru: {
         title: "Профиль",
         content: {
-            save: "Войти",
+            buttons: {
+                signIn: "Вход",
+                signOut: "Выход"
+            },
             login: "Логин",
             password: "Пароль"
         },
