@@ -5,23 +5,14 @@ import Notification from "../../common/alert";
 const Profile = (props) => {
     let page = props.page;
     let creads = props.creads;
-    let error = creads.error;
-    let notification = (error.name !== '')
-        ? <div className="row alert alert-danger mt-2">
-            <b>{error.name}</b>&nbsp;
-            {error.description}
-          </div>
-        : (creads.is_active === true)
-            ? <div className="row alert alert-success mt-2">Login successful</div>
-            : null
     let onLoginUpdate = (e) => {
-        props.onLoginUpdate(e.target.value)
+        props.changeLogin(e.target.value)
     }
     let onPasswordUpdate = (e) => {
-        props.onPasswordUpdate(e.target.value)
+        props.changePass(e.target.value)
     }
     let onLoginClick = () => {
-        props.onLogin()
+        props.login()
     }
     return (
         <div>
@@ -49,7 +40,7 @@ const Profile = (props) => {
                                onChange={onPasswordUpdate} />
                     </div>
                 </div>
-                {notification}
+                {props.notification}
                 <div className="row mt-1">
                     <div className="col">
                         <button className="btn btn-success btn-sm"
