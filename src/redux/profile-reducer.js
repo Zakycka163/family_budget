@@ -3,6 +3,7 @@ import {accounts} from "./settings";
 const LOGIN_CHANGE = 'LOGIN_CHANGE';
 const PASS_CHANGE = 'PASS_CHANGE';
 const LOGIN = 'LOGIN';
+const LOGOUT = 'LOGOUT';
 
 let initialNotification = {type: '', is_error: false};
 let login_failed = {type: 'login_fail', is_error: true};
@@ -28,6 +29,8 @@ const profileReducer = (state = initialState, action) =>{
             } else {
                 return { ...copyState, password: '', notification: login_failed};
             }
+        case LOGOUT:
+            return { ...initialState};
         default: 
             return state;
     }
@@ -36,5 +39,6 @@ const profileReducer = (state = initialState, action) =>{
 export const changeLogin = (value) => ({type: LOGIN_CHANGE, value: value});
 export const changePass = (value) => ({type: PASS_CHANGE, value: value});
 export const login = () => ({type: LOGIN});
+export const logout = () => ({type: LOGOUT});
 
 export default profileReducer;

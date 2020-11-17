@@ -13,6 +13,9 @@ const Profile = (props) => {
     let onLoginClick = () => {
         props.login()
     }
+    let onLogoutClick = () => {
+        props.logout()
+    }
     return (
         <div>
             <PageTitle title={page.title} />
@@ -42,10 +45,16 @@ const Profile = (props) => {
                 {props.notification}
                 <div className="row mt-1">
                     <div className="col">
-                        <button className="btn btn-success btn-sm"
-                                onClick={onLoginClick}>
-                            {page.content.buttons.signIn}
-                        </button>
+                        {creads.is_active
+                            ? <button className="btn btn-danger btn-sm"
+                                      onClick={onLogoutClick}>
+                                {page.content.buttons.signOut}
+                              </button>
+                            : <button className="btn btn-success btn-sm"
+                                    onClick={onLoginClick}>
+                                {page.content.buttons.signIn}
+                              </button>
+                        }
                     </div>
                 </div>
 

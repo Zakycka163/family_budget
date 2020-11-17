@@ -1,6 +1,6 @@
 import Profile from "./Profile";
 import {connect} from "react-redux";
-import {changeLogin, changePass, login} from "../../../redux/profile-reducer";
+import {changeLogin, changePass, login, logout} from "../../../redux/profile-reducer";
 import Notification from "../../common/alert";
 import React from "react";
 
@@ -21,7 +21,7 @@ const mstp = (state) => {
     }
 }
 
-const mdtp = {changeLogin,changePass,login};
+const mdtp = {changeLogin,changePass,login, logout};
 
 const ProfileContainer = connect(mstp,mdtp) (Profile);
 
