@@ -4,13 +4,16 @@ import settings from "../../../redux/settings";
 import {GoogleSpreadsheet} from "google-spreadsheet";
 import {setDocProperty} from "../../../redux/dev-reducer";
 import {connect} from "react-redux";
+import {Redirect} from "react-router-dom";
 
 class DevContainer extends React.Component {
     componentDidMount() {
-        this.auth()
-            .then(
-                (r) => this.props.setDocProperty(r)
-            );
+        if (this.props.is_active) {
+            this.auth()
+                .then(
+                    (r) => this.props.setDocProperty(r)
+                );
+        }
     }
     async auth() {
         const doc = new GoogleSpreadsheet(settings.service.docId);
@@ -22,14 +25,18 @@ class DevContainer extends React.Component {
         return {title: doc.title, sheetCount: doc.sheetCount};
     }
     render() {
-        return (<Dev page={this.props.page} doc={this.props.doc}/>)
+        return (this.props.is_active
+                    ? <Dev page={this.props.page} doc={this.props.doc}/>
+                    : <Redirect to="/" />
+            )
     }
 }
 
 const mstp = (state) => {
     return {
         page: state.elements.page.dev,
-        doc: state.googleDoc
+        doc: state.googleDoc,
+        is_active: state.profile.is_active
     }
 }
 const mdtp = {setDocProperty}
