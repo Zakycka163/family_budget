@@ -1,6 +1,7 @@
 import React from "react";
 import PageTitle from "../PageTitle";
 import Loader from "../../common/Loader";
+import Pagination from "../../common/pagination";
 
 const Dev = (props) => {
     let pages = [];
@@ -16,9 +17,7 @@ const Dev = (props) => {
                     : <Loader />
                 }
                 <p></p>
-                {pages.map( p => {
-                    return <span key={p}>{p}</span>
-                })}
+                <Pagination pages={pages}/>
             </div>
         </div>
     )
