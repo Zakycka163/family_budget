@@ -1,7 +1,7 @@
 import Profile from "./Profile";
 import {connect} from "react-redux";
 import {changeLogin, changePass, login, logout} from "../../../redux/profile-reducer";
-import Notification from "../../common/alert";
+import Notification from "../../common/Alert";
 import React from "react";
 
 const mstp = (state) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import PageTitle from "../PageTitle";
 import Loader from "../../common/Loader";
-import Pagination from "../../common/pagination";
+import Pagination from "../../common/Pagination";
 
 const Dev = (props) => {
     let pages = [];
@@ -16,7 +16,6 @@ const Dev = (props) => {
                     ? <div className="p-1 font-weight-bold page-title"><h5>{props.doc.title}</h5></div>
                     : <Loader />
                 }
-                <p></p>
                 <Pagination pages={pages}/>
             </div>
         </div>
