@@ -9,20 +9,31 @@ import {Redirect} from "react-router-dom";
 class DevContainer extends React.Component {
     componentDidMount() {
         if (this.props.is_active) {
-            this.auth()
+            this.auth(this.props.doc)
                 .then(
                     (r) => this.props.setDocProperty(r)
                 );
         }
     }
-    async auth() {
-        const doc = new GoogleSpreadsheet(settings.service.docId);
-        await doc.useServiceAccountAuth({
-            client_email: settings.service.client_email,
-            private_key: settings.service.private_key,
-        });
-        await doc.loadInfo();
-        return {title: doc.title, sheetCount: doc.sheetCount};
+    async auth(doc) {
+        let spreadsheet;
+        if (!doc.GoogleSpreadsheet){
+            spreadsheet = new GoogleSpreadsheet(settings.service.docId);
+            await spreadsheet.useServiceAccountAuth({
+                client_email: settings.service.client_email,
+                private_key: settings.service.private_key,
+            });
+        } else{
+            spreadsheet = doc.GoogleSpreadsheet;
+        }
+        await spreadsheet.loadInfo();
+        let expiry_date = new Date(spreadsheet.jwtClient.credentials.expiry_date);
+        return {
+            title: spreadsheet.title,
+            sheetCount: spreadsheet.sheetCount,
+            GoogleSpreadsheet: spreadsheet,
+            expiry_date: expiry_date
+        };
     }
     render() {
         return (this.props.is_active

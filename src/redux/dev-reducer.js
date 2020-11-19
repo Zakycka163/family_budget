@@ -4,25 +4,20 @@ const SET_SHEET_PROP = 'SET_SHEET_PROP';
 const initialState = {
     title: '',
     sheetCount: 0,
-    sheets: [
-        {
-            title: '',
-            sheetId: null
-        }
-    ]
+    GoogleSpreadsheet: null,
+    expiry_date: null,
+    sheets: []
 }
 
 const devReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_DOC_PROP:
-            return {...state,   title: action.property.title,
-                                sheetCount: action.property.sheetCount};
+            return {...state, ...action.property};
         case SET_SHEET_PROP:
             return {...state,
                     sheets: state.sheets.map((e, i) =>
                         (i === action.index)
-                            ? {...e,    title: action.property.title,
-                                        sheetId: action.property.sheetId}
+                            ? {...e, ...action.property}
                             : e)
             };
         default:
