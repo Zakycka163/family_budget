@@ -31,12 +31,10 @@ const devReducer = (state = initialState, action) => {
 const setDocProperty = (property) => ({type: SET_DOC_PROP, property});
 export const setSheetProperty = (index, property) => ({type: SET_SHEET_PROP, index, property})
 
-export const getDocThunk = (is_active, doc) => {
-    return (dispatch) => {
-        if (is_active) {
-            auth(doc)
-                .then((r) => dispatch(setDocProperty(r)));
-        }
+export const getDocThunk = (is_active, doc) => (dispatch) => {
+    if (is_active) {
+        auth(doc)
+            .then((r) => dispatch(setDocProperty(r)));
     }
 }
 
