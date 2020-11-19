@@ -1,7 +1,8 @@
-import {combineReducers, createStore} from "redux";
+import {applyMiddleware, combineReducers, createStore} from "redux";
 import langReducer from "./lang-reducer";
 import devReducer from "./dev-reducer";
 import profileReducer from "./profile-reducer";
+import thunkMiddleware from "redux-thunk"
 
 let reducers = combineReducers({
     elements: langReducer,
@@ -9,7 +10,7 @@ let reducers = combineReducers({
     profile: profileReducer
 });
 
-let store = createStore(reducers);
+let store = createStore(reducers, applyMiddleware(thunkMiddleware));
 
 window.store = store;
 
