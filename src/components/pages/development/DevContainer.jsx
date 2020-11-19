@@ -9,10 +9,9 @@ class DevContainer extends React.Component {
         this.props.getDocThunk(this.props.is_active, this.props.doc);
     }
     render() {
+        if (!this.props.is_active) return <Redirect to="/profile" />
         return (
-            this.props.is_active
-                ? <Dev page={this.props.page} doc={this.props.doc}/>
-                : <Redirect to="/" />
+            <Dev page={this.props.page} doc={this.props.doc}/>
         )
     }
 }

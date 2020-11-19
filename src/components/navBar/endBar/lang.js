@@ -1,15 +1,13 @@
 const items = {
     en: [
-            {button: "Sign In", is_SingIn: false},
-            {button: "Profile", is_SingIn: true}
+            {button: "Sign In", is_active: false},
+            {button: "Profile", is_active: true}
         ],
     ru: [
-            {button: "Вход", is_SingIn: false},
-            {button: "Профиль", is_SingIn: true}
+            {button: "Вход", is_active: false},
+            {button: "Профиль", is_active: true}
     ],
-    properties: [
-        {path: "/profile"}
-    ]
+    path: "/profile"
 }
 
 export default items;

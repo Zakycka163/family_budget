@@ -25,7 +25,7 @@ const notifications = {
     }
 }
 
-const profilePage = {
+const page = {
     en: {
         title: "Profile",
         content: {
@@ -59,6 +59,4 @@ const profilePage = {
     }
 }
 
-
-
-export default profilePage;
+export default page;

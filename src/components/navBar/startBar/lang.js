@@ -1,15 +1,7 @@
 const items = {
-    en: [ "Main"
-        , "Development"
-        , "About"],
-    ru: [ "Главная"
-        , "Разработка"
-        , "Инфо"],
-    properties: [
-        {path: "/", work: false},
-        {path: "/google-sheet", work: true},
-        {path: "/about", work: false}
-    ]
+    en:     ["Main",    "Spreadsheet",      "About"],
+    ru:     ["Главная", "Таблица",          "Инфо"],
+    path:   ["/",       "/google-sheet",    "/about"]
 }
 
 export default items;

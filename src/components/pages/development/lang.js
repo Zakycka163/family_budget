@@ -1,10 +1,10 @@
-const devPage = {
+const page = {
     en:{
-        title: "Development"
+        title: "Google Spreadsheet"
     },
     ru:{
-        title: "Разработка"
+        title: "Google Таблица"
     }
 }
 
-export default devPage;
+export default page;

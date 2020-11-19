@@ -1,14 +1,12 @@
 import EndBar from "./EndBar";
 import {connect} from "react-redux";
 
-const mapStateToProps = (state) => {
+const mstp = (state) => {
     return {
-        items: (state.profile.is_active === true)
-            ? state.elements.menu.end_items.filter(e => e.is_SingIn === true)
-            : state.elements.menu.end_items.filter(e => e.is_SingIn === false)
+        items: state.elements.menu.end_items.filter(e => e.is_active === state.profile.is_active)
     }
 }
 
-const EndBarContainer = connect(mapStateToProps) (EndBar);
+const EndBarContainer = connect(mstp) (EndBar);
 
 export default EndBarContainer;

@@ -1,4 +1,4 @@
-const aboutPage = {
+const page = {
     en:{
         title: "About",
         content: {
@@ -19,4 +19,4 @@ const aboutPage = {
     }
 }
 
-export default aboutPage;
+export default page;
