@@ -2,11 +2,12 @@ import React from "react";
 import PageTitle from "../PageTitle";
 import Loader from "../../common/Loader";
 import Pagination from "../../common/Pagination";
+import TableContainer from "./TableContainer";
 
 const Dev = (props) => {
     let pages = [];
-    for (let i=1; i <= props.doc.sheetCount; i++) {
-        pages.push(i);
+    for (let i = 1; i <= props.doc.sheetCount; i++) {
+        pages[i] = i;
     }
     return (
         <div>
@@ -16,6 +17,7 @@ const Dev = (props) => {
                     ? <div className="p-1 font-weight-bold page-title"><h5>{props.doc.title}</h5></div>
                     : <Loader />
                 }
+                <TableContainer />
                 <Pagination pages={pages}/>
             </div>
         </div>
