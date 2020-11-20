@@ -3,6 +3,8 @@ import Dev from "./Dev";
 import {getDocThunk} from "../../../redux/dev-reducer";
 import {connect} from "react-redux";
 import {withAuthRedirect} from "../../../hoc/withAuthRedirect";
+import {compose} from "redux";
+import {withRouter} from "react-router-dom";
 
 class DevContainer extends React.Component {
     componentDidMount() {
@@ -17,9 +19,12 @@ class DevContainer extends React.Component {
 
 const mstp = (state) => ({
     page: state.elements.page.dev,
-    doc: state.googleDoc,
-    is_auth: state.profile.is_auth
+    doc: state.googleDoc
 })
 const mdtp = {getDocThunk}
 
-export default withAuthRedirect(connect(mstp, mdtp)(DevContainer));
+export default compose(
+    connect(mstp, mdtp),
+    withRouter,
+    withAuthRedirect
+)(DevContainer);
