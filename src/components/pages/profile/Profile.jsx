@@ -10,19 +10,13 @@ const Profile = (props) => {
     let onPasswordUpdate = (e) => {
         props.changePass(e.target.value)
     }
-    let onLoginClick = () => {
-        props.login()
-    }
-    let onLogoutClick = () => {
-        props.logout()
-    }
     let button = (creads.is_auth)
                     ?   <button className="btn btn-danger btn-sm"
-                                onClick={onLogoutClick}>
+                                onClick={props.logout}>
                             {page.content.buttons.signOut}
                         </button>
                     :   <button className="btn btn-success btn-sm"
-                                onClick={onLoginClick}>
+                                onClick={props.login}>
                             {page.content.buttons.signIn}
                         </button>
     return (

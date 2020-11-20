@@ -5,6 +5,4 @@ const mstp = (state) => ({
     page: state.elements.page.main
 })
 
-const MainContainer = connect(mstp)(Main);
-
-export default MainContainer;
+export default connect(mstp)(Main);

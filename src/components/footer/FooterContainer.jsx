@@ -5,6 +5,4 @@ const mstp = (state) => ({
     footer: state.elements.footer
 })
 
-const FooterContainer = connect(mstp)(Footer);
-
-export default FooterContainer;
+export default connect(mstp)(Footer);

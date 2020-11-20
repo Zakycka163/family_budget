@@ -23,6 +23,4 @@ const mstp = (state) => {
 
 const mdtp = {changeLogin,changePass,login,logout};
 
-const ProfileContainer = connect(mstp,mdtp)(Profile);
-
-export default ProfileContainer;
+export default connect(mstp,mdtp)(Profile);

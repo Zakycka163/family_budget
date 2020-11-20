@@ -7,6 +7,4 @@ const mstp = (state) => ({
 })
 const mdtp = {changeLang}
 
-const LangContainer = connect(mstp, mdtp) (Lang);
-
-export default LangContainer;
+export default connect(mstp, mdtp) (Lang);
