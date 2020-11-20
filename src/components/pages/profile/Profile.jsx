@@ -16,6 +16,15 @@ const Profile = (props) => {
     let onLogoutClick = () => {
         props.logout()
     }
+    let button = (creads.is_auth)
+                    ?   <button className="btn btn-danger btn-sm"
+                                onClick={onLogoutClick}>
+                            {page.content.buttons.signOut}
+                        </button>
+                    :   <button className="btn btn-success btn-sm"
+                                onClick={onLoginClick}>
+                            {page.content.buttons.signIn}
+                        </button>
     return (
         <div>
             <PageTitle title={page.title} />
@@ -45,16 +54,7 @@ const Profile = (props) => {
                 {props.notification}
                 <div className="row mt-1">
                     <div className="col">
-                        {creads.is_active
-                            ? <button className="btn btn-danger btn-sm"
-                                      onClick={onLogoutClick}>
-                                {page.content.buttons.signOut}
-                              </button>
-                            : <button className="btn btn-success btn-sm"
-                                    onClick={onLoginClick}>
-                                {page.content.buttons.signIn}
-                              </button>
-                        }
+                        {button}
                     </div>
                 </div>
 

@@ -13,11 +13,11 @@ const initialState = {
     login: '',
     password: '',
     notification: initialNotification,
-    is_active: false
+    is_auth: false
 };
 
-const profileReducer = (state = initialState, action) =>{
-    let copyState = {...state, notification: initialNotification, is_active: false};
+const profileReducer = (state = initialState, action) => {
+    let copyState = {...state, notification: initialNotification, is_auth: false};
     switch (action.type){
         case LOGIN_CHANGE:
             return { ...copyState, login: action.value};
@@ -25,7 +25,7 @@ const profileReducer = (state = initialState, action) =>{
             return { ...copyState, password: action.value};
         case LOGIN:
             if (accounts.findIndex(acc => acc.login === state.login && acc.password === state.password) > -1) {
-                return { ...copyState, is_active: true, notification: login_success};
+                return { ...copyState, is_auth: true, notification: login_success};
             } else {
                 return { ...copyState, password: '', notification: login_failed};
             }

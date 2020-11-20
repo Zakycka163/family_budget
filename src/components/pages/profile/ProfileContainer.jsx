@@ -10,10 +10,10 @@ const mstp = (state) => {
     return {
         page: page,
         creads: creads,
-        notification: (creads.notification.is_error === true)
+        notification: (creads.notification.is_error)
                         ? <Notification name={page.notifications.errors[creads.notification.type].name}
                                         description={page.notifications.errors[creads.notification.type].description}/>
-                        : (creads.is_active === true)
+                        : (creads.is_auth)
                             ? <Notification type='ok'
                                             name={page.notifications.success.name}
                                             description={page.notifications.success.description} />
@@ -21,8 +21,8 @@ const mstp = (state) => {
     }
 }
 
-const mdtp = {changeLogin,changePass,login, logout};
+const mdtp = {changeLogin,changePass,login,logout};
 
-const ProfileContainer = connect(mstp,mdtp) (Profile);
+const ProfileContainer = connect(mstp,mdtp)(Profile);
 
 export default ProfileContainer;

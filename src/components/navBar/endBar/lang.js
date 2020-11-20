@@ -1,12 +1,12 @@
 const items = {
     en: [
-            {button: "Sign In", is_active: false},
-            {button: "Profile", is_active: true}
+        {button: "Sign In", is_auth: false},
+        {button: "Profile", is_auth: true}
         ],
     ru: [
-            {button: "Вход", is_active: false},
-            {button: "Профиль", is_active: true}
-    ],
+        {button: "Вход", is_auth: false},
+        {button: "Профиль", is_auth: true}
+        ],
     path: "/profile"
 }
 

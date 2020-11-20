@@ -18,11 +18,9 @@ class TableContainer extends React.Component {
     }
 }
 
-const mstp = (state) => {
-    return {
-        doc: state.googleDoc
-    }
-}
+const mstp = (state) => ({
+    doc: state.googleDoc
+})
 const mdtp = {setSheetProperty}
 
 export default connect(mstp, mdtp) (TableContainer);
