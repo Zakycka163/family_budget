@@ -13,11 +13,10 @@ const mstp = (state) => {
         notification: (creads.notification.is_error)
                         ? <Notification name={page.notifications.errors[creads.notification.type].name}
                                         description={page.notifications.errors[creads.notification.type].description}/>
-                        : (creads.is_auth)
-                            ? <Notification type='ok'
-                                            name={page.notifications.success.name}
-                                            description={page.notifications.success.description} />
-                            : null
+                        : (creads.is_auth) &&
+                            <Notification type='ok'
+                                          name={page.notifications.success.name}
+                                          description={page.notifications.success.description} />
     }
 }
 
