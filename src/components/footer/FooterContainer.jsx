@@ -1,12 +1,12 @@
 import Footer from "./Footer";
 import {connect} from "react-redux";
 
-const mapStateToProps = (state) => {
+const mstp = (state) => {
     return {
         footer: state.elements.footer
     }
 }
 
-const FooterContainer = connect(mapStateToProps) (Footer);
+const FooterContainer = connect(mstp) (Footer);
 
 export default FooterContainer;
