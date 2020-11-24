@@ -1,17 +1,23 @@
 import React from "react";
 
 const Table = (props) => {
-    if ( !props.table ) {
-        return (<tr><td>Пустой список</td></tr>)
+    let body;
+    if ( !props.sheet.table ) {
+        body = <tr><td>Пустой список</td></tr>;
     } else {
-        return (
-            props.table.map((row, x) => (
+        body = props.sheet.table.map((row, x) => (
                     <tr key={x}>
-                        {row._rawData.map((cell,y) => <td key={y}>{cell}</td>) }
+                        {row.map((cell,y) => <td key={y}>{cell.value}</td>) }
                     </tr>
-                )
-            )
-        );
+                    )
+                );
     }
+    return (
+        <table className="table table-bordered table-sm">
+            <tbody>
+                {body}
+            </tbody>
+        </table>
+    )
 }
 export default Table;
