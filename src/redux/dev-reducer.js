@@ -3,12 +3,14 @@ import settings from "./settings";
 
 const SET_DOC_PROP = 'SET_DOC_PROP';
 const SET_SHEET_PROP = 'SET_SHEET_PROP';
+const SELECT_SHEET = 'SELECT_SHEET';
 
 const initialState = {
     title: '',
     sheetCount: 0,
     GoogleSpreadsheet: null,
     expiry_date: null,
+    current_sheet: 0,
     sheets: []
 }
 
@@ -18,22 +20,41 @@ const devReducer = (state = initialState, action) => {
             return {...state, ...action.property};
         case SET_SHEET_PROP:
             return {...state,
-                    sheets: state.sheets.map((e, i) =>
-                        (i === action.index)
-                            ? {...e, ...action.property}
-                            : e)
+                    sheets: (!state.sheets[action.index])
+                                ? [...state.sheets, {...action.property}]
+                                : state.sheets.map((e, i) =>
+                                    (i === action.index)
+                                        ? {...e, ...action.property}
+                                        : {...e})
             };
+        case SELECT_SHEET:
+            return {...state, current_sheet: action.index};
         default:
             return state;
     }
 }
 
 const setDocProperty = (property) => ({type: SET_DOC_PROP, property});
-export const setSheetProperty = (index, property) => ({type: SET_SHEET_PROP, index, property})
+const setSheetProperty = (index, property) => ({type: SET_SHEET_PROP, index, property});
+export const selectSheet = (index) => ({type: SELECT_SHEET, index});
 
 export const getDocThunk = (doc) => (dispatch) => {
     auth(doc)
-        .then((r) => dispatch(setDocProperty(r)));
+        .then((r) => {
+            dispatch(setDocProperty(r));
+            let spreadsheet = r.GoogleSpreadsheet;
+            for (let i = 0; i < r.sheetCount; i++) {
+                let sheet = spreadsheet.sheetsByIndex[i];
+                getData(sheet).then(r => {
+                    dispatch(setSheetProperty(i, {sheet, title: sheet.title, table: r}))
+                })
+            }
+        });
+}
+
+const getData = async (sheet) => {
+    await sheet.loadCells('A1:C7');
+    return sheet._cells;
 }
 
 const auth = async (doc) => {
