@@ -14,7 +14,7 @@ const App = () => {
             <NavBar />
             <Route exact path="/" component={MainContainer}/>
             <Route path="/about" component={AboutContainer}/>
-            <Route path="/google-sheet" component={DevContainer}/>
+            <Route path="/google-sheet/:sheetIndex?" component={DevContainer}/>
             <Route path="/profile" component={ProfileContainer}/>
             <FooterContainer />
         </div>
