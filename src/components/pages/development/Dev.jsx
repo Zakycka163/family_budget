@@ -1,8 +1,7 @@
 import React from "react";
 import PageTitle from "../PageTitle";
 import Loader from "../../common/Loader";
-import Table from "./Table";
-import Pagination from "../../common/Pagination";
+import TableContainer from "./TableContainer";
 
 const Dev = (props) => {
     return (
@@ -14,10 +13,9 @@ const Dev = (props) => {
                     : <Loader />
                 }
                 {(props.doc.sheetCount > 0 && props.doc.sheetCount === props.doc.sheets.length)
-                    ? <Table sheet={props.doc.sheets[props.doc.current_sheet]}/>
+                    ? <TableContainer />
                     : <Loader />
                 }
-                <Pagination items={props.doc.sheets} selectSheet={props.selectSheet}/>
             </div>
         </div>
     )

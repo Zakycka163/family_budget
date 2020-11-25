@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 
 const Pagination = (props) => {
     let onSelectSheet = (e) => {
-        props.selectSheet(e.target.id);
+        props.getSheetThunk(props.items, e.target.id);
     }
     return (
         <nav aria-label="Page navigation example">

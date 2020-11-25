@@ -36,7 +36,7 @@ const devReducer = (state = initialState, action) => {
 
 const setDocProperty = (property) => ({type: SET_DOC_PROP, property});
 const setSheetProperty = (index, property) => ({type: SET_SHEET_PROP, index, property});
-export const selectSheet = (index) => ({type: SELECT_SHEET, index});
+const selectSheet = (index) => ({type: SELECT_SHEET, index});
 
 export const getDocThunk = (doc) => (dispatch) => {
     auth(doc)
@@ -49,6 +49,15 @@ export const getDocThunk = (doc) => (dispatch) => {
                     dispatch(setSheetProperty(i, {sheet, title: sheet.title, table: r}))
                 })
             }
+        });
+}
+
+export const getSheetThunk = (sheets, index) => (dispatch) => {
+    let sheet = sheets[index].sheet;
+    getData(sheet)
+        .then(r => {
+            dispatch(setSheetProperty(index, {table: r}));
+            dispatch(selectSheet(index));
         });
 }
 
