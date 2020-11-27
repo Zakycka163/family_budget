@@ -7,7 +7,7 @@ const Dev = (props) => {
     return (
         <div>
             <PageTitle title={props.page.title}/>
-            <div className="px-3 py-4 bg-light">
+            <div className="px-3 py-4">
                 {(props.doc.title !== '')
                     ? <div className="p-1 font-weight-bold page-title"><h5>{props.doc.title}</h5></div>
                     : <Loader />

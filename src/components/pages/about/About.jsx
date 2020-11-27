@@ -6,7 +6,7 @@ const About = (props) => {
     return (
         <div>
             <PageTitle title={page.title}/>
-            <div className="jumbotron jumbotron-fluid">
+            <div className="jumbotron jumbotron-fluid bg-transparent">
                 <div className="container">
                     <h5 className="row">
                         <div className="col-3">{page.content.position}:</div>

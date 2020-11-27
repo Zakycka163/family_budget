@@ -3,8 +3,8 @@ import {NavLink} from "react-router-dom";
 
 const StartBar = (props) => {
     let tabs = props.items.map((e, i) => {
-        return  <li className="nav-item" key={i}>
-                    <NavLink className="btn btn-light" exact to={e.path}>{e.title}</NavLink>
+        return  <li className="nav-item ml-2" key={i}>
+                    <NavLink className="btn btn-sm btn-outline-dark font-weight-bold" exact to={e.path}>{e.title}</NavLink>
                 </li>
         }
     );

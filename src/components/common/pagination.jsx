@@ -6,12 +6,12 @@ const Pagination = (props) => {
         props.getSheetThunk(props.items, e.target.id);
     }
     return (
-        <nav aria-label="Page navigation example">
-            <ul className="pagination">
+        <nav>
+            <ul className="pagination pagination-sm justify-content-center">
                 {props.items.map( (p, i) => {
                     return (
                         <li className="page-item" key={i} onClick={onSelectSheet}>
-                            <NavLink className="page-link" id={i} to={'/google-sheet/'+i}>{p.title}</NavLink>
+                            <NavLink className="btn btn-sm btn-outline-dark" id={i} to={'/google-sheet/'+i}>{p.title}</NavLink>
                         </li>
                     )
                 })}

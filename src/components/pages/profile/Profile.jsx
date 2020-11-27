@@ -22,32 +22,34 @@ const Profile = (props) => {
     return (
         <div>
             <PageTitle title={page.title} />
-            <div className="px-3 py-4 bg-light">
-                <div className="row mt-3">
-                    <div className="col-2">
+            <div className="px-3 py-4">
+                <div className="row mt-3 justify-content-center">
+                    <div className="col-3 col-sm-2 col-md-2 col-lg-1">
                         {page.content.login}<span>*</span>
                     </div>
-                    <div className="col-5">
+                    <div className="col-6 col-sm-5 col-md-5">
                         <input className="form-control"
                                type="text"
                                value={creads.login}
                                onChange={onLoginUpdate}/>
                     </div>
                 </div>
-                <div className="row mt-2">
-                    <div className="col-2">
+                <div className="row mt-2 justify-content-center">
+                    <div className="col-3 col-sm-2 col-md-2 col-lg-1">
                         {page.content.password}<span>*</span>
                     </div>
-                    <div className="col-5">
+                    <div className="col-6 col-sm-5 col-md-5">
                         <input className="form-control"
                                type="password"
                                value={creads.password}
                                onChange={onPasswordUpdate} />
                     </div>
                 </div>
-                {props.notification}
-                <div className="row mt-1">
-                    <div className="col">
+                <div className="row mt-1 justify-content-center">
+                    {props.notification}
+                </div>
+                <div className="row mt-1 justify-content-center">
+                    <div className="col-3 col-md-2 col-xl-1">
                         {button}
                     </div>
                 </div>

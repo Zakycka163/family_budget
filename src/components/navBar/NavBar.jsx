@@ -4,7 +4,7 @@ import StartBarContainer from "./startBar/StartBarContainer";
 
 const NavBar = () => {
     return (
-        <nav className="navbar bg-light sticky-top d-lg-flex">
+        <nav className="navbar bg-transparent sticky-top">
             <StartBarContainer />
             <EndBarContainer />
         </nav>

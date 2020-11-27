@@ -13,7 +13,7 @@ const Table = (props) => {
                 );
     }
     return (
-        <table className="table table-bordered table-sm">
+        <table className="table table-sm table-bordered table-hover">
             <tbody>
                 {body}
             </tbody>
