@@ -7,7 +7,7 @@ const Footer = (props) => {
                 <span>{props.footer.city} 2020 </span>
                 <a href="https://github.com/Zakycka163/family_budget" target="_blank" title="Link to Project"
                    rel="noreferrer noopener">
-                    <img src="/img/ico.ico" height="35px" alt="Icon" />
+                    <img src="/img/ico.png" height="30px" alt="Icon" />
                 </a>
             </div>
         </footer>
