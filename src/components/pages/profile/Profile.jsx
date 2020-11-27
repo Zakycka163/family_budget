@@ -23,8 +23,8 @@ const Profile = (props) => {
         <div>
             <PageTitle title={page.title} />
             <div className="px-3 py-4">
-                <div className="row mt-3 justify-content-center">
-                    <div className="col-3 col-sm-2 col-md-2 col-lg-1">
+                <div className="row mt-3 justify-content-center align-items-center">
+                    <div className="col-3 col-sm-2 col-md-2 col-lg-1 font-weight-bold">
                         {page.content.login}<span>*</span>
                     </div>
                     <div className="col-6 col-sm-5 col-md-5">
@@ -34,8 +34,8 @@ const Profile = (props) => {
                                onChange={onLoginUpdate}/>
                     </div>
                 </div>
-                <div className="row mt-2 justify-content-center">
-                    <div className="col-3 col-sm-2 col-md-2 col-lg-1">
+                <div className="row mt-2 justify-content-center align-items-center">
+                    <div className="col-3 col-sm-2 col-md-2 col-lg-1 font-weight-bold">
                         {page.content.password}<span>*</span>
                     </div>
                     <div className="col-6 col-sm-5 col-md-5">
