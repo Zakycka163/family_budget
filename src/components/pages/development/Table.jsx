@@ -1,4 +1,5 @@
 import React from "react";
+import * as s from "./Table.module.css"
 
 const Table = (props) => {
     let body;
@@ -7,13 +8,13 @@ const Table = (props) => {
     } else {
         body = props.sheet.table.map((row, x) => (
                     <tr key={x}>
-                        {row.map((cell,y) => <td key={y}>{cell.value}</td>) }
+                        {row.map((cell,y) => <td key={y} title={cell.formula}>{cell.value}</td>) }
                     </tr>
                     )
                 );
     }
     return (
-        <table className="table table-sm table-bordered table-hover">
+        <table>
             <tbody>
                 {body}
             </tbody>

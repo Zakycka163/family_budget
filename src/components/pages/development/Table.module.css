@@ -1,0 +1,21 @@
+table, thead, tbody, tr, th, td{
+    border: 1px solid black; 
+}
+
+table {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+    color: white;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+
+th, td {
+    padding: 5px 0 5px 10px;
+}
+
+tr:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
