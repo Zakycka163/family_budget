@@ -3,14 +3,14 @@ import PageTitle from "../PageTitle";
 
 const Profile = (props) => {
     let page = props.page;
-    let creads = props.creads;
+    let creds = props.creds;
     let onLoginUpdate = (e) => {
         props.changeLogin(e.target.value)
     }
     let onPasswordUpdate = (e) => {
         props.changePass(e.target.value)
     }
-    let button = (creads.is_auth)
+    let button = (creds.is_auth)
                     ?   <button className="btn btn-danger btn-sm"
                                 onClick={props.logout}>
                             {page.content.buttons.signOut}
@@ -30,7 +30,7 @@ const Profile = (props) => {
                     <div className="col-6 col-sm-5 col-md-5">
                         <input className="form-control"
                                type="text"
-                               value={creads.login}
+                               value={creds.login}
                                onChange={onLoginUpdate}/>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ const Profile = (props) => {
                     <div className="col-6 col-sm-5 col-md-5">
                         <input className="form-control"
                                type="password"
-                               value={creads.password}
+                               value={creds.password}
                                onChange={onPasswordUpdate} />
                     </div>
                 </div>

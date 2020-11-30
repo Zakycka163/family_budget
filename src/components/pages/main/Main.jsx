@@ -7,7 +7,7 @@ const Main = (props) => {
             <PageTitle title={props.page.title} />
             <div className="px-3 py-4">
                 <div className="d-flex justify-content-center">
-                    <p>Hello</p>
+                    <p>Test</p>
                 </div>
             </div>
         </div>
