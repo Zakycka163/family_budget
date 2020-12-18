@@ -1,5 +1,24 @@
 import React from "react";
+import { reduxForm, Field } from "redux-form";
 import PageTitle from "../PageTitle";
+
+let ProfileForm = () => {
+    return (
+        <form>
+            <div className="col-6 col-sm-5 col-md-5">
+                <Field component="input" className="form-control" name="login"/>
+            </div>
+            <div className="col-6 col-sm-5 col-md-5">
+                <Field component="input" className="form-control" name="password" type="password"/>
+            </div>
+            <div className="col-3 col-md-2 col-xl-1">
+                <button className="btn btn-success btn-sm">Post</button>
+            </div>
+        </form>
+    )
+}
+ProfileForm = reduxForm({form: 'profile'})(ProfileForm)
+
 
 const Profile = (props) => {
     let page = props.page;
@@ -23,6 +42,7 @@ const Profile = (props) => {
         <div>
             <PageTitle title={page.title} />
             <div className="px-3 py-4">
+                <ProfileForm />
                 <div className="row mt-3 justify-content-center align-items-center">
                     <div className="col-3 col-sm-2 col-md-2 col-lg-1 font-weight-bold">
                         {page.content.login}<span>*</span>
@@ -46,12 +66,12 @@ const Profile = (props) => {
                     </div>
                 </div>
                 <div className="row mt-1 justify-content-center">
-                    {props.notification}
-                </div>
-                <div className="row mt-1 justify-content-center">
                     <div className="col-3 col-md-2 col-xl-1">
                         {button}
                     </div>
+                </div>
+                <div className="row mt-1 justify-content-center">
+                    {props.notification}
                 </div>
 
             </div>
